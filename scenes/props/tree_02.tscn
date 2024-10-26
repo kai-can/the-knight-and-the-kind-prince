@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd31pvg2yt0ta"]
+
+[ext_resource type="Texture2D" uid="uid://cf2xf54fagqfn" path="res://assets/Tree-Sheet.png" id="1_vmaur"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pr3jc"]
+radius = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vqlli"]
+radius = 8.0
+height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm5hb"]
+size = Vector2(7, 9)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fdfos"]
+a = Vector2(-3, 4)
+b = Vector2(6, 9)
+
+[node name="tree_02" type="Node2D"]
+position = Vector2(0, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vmaur")
+hframes = 2
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(-8, 26)
+shape = SubResource("CircleShape2D_pr3jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_vqlli")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(7.5, 25.5)
+shape = SubResource("RectangleShape2D_jm5hb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(11, 21)
+shape = SubResource("SegmentShape2D_fdfos")

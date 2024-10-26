@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://20a6mn00uoru"]
+
+[ext_resource type="Texture2D" uid="uid://5h6nqqoq10tj" path="res://assets/Rock-Sheet.png" id="1_iu2uy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bij7x"]
+size = Vector2(10, 7)
+
+[node name="rock_01" type="Node2D"]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iu2uy")
+hframes = 4
+frame = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_bij7x")

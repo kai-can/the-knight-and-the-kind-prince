@@ -1,0 +1,216 @@
+[gd_scene load_steps=11 format=3 uid="uid://oub3x361nhvi"]
+
+[ext_resource type="PackedScene" uid="uid://bsbixwumfcttb" path="res://scenes/level_transition.tscn" id="1_21joc"]
+[ext_resource type="PackedScene" uid="uid://bkbkbawt8eaym" path="res://scenes/grass_01.tscn" id="1_77cw2"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_hne1u"]
+[ext_resource type="PackedScene" uid="uid://dqhxtajlrw3q1" path="res://scenes/props/tree_01.tscn" id="2_knvau"]
+[ext_resource type="PackedScene" uid="uid://bd31pvg2yt0ta" path="res://scenes/props/tree_02.tscn" id="3_4cmk8"]
+[ext_resource type="PackedScene" uid="uid://cu34nixaq06db" path="res://scenes/props/rock_02.tscn" id="5_63w5b"]
+[ext_resource type="PackedScene" uid="uid://20a6mn00uoru" path="res://scenes/props/rock_01.tscn" id="6_epp1d"]
+[ext_resource type="PackedScene" uid="uid://cqld4gob4uu7c" path="res://scenes/props/mossrock_02.tscn" id="7_0euk1"]
+[ext_resource type="PackedScene" uid="uid://hkil6vw3jp5w" path="res://scenes/props/moss_rock_01.tscn" id="8_vp3u1"]
+[ext_resource type="PackedScene" uid="uid://7ujronsu5p3h" path="res://scenes/player_spawn.tscn" id="10_abggg"]
+
+[node name="Forest_04" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_hne1u")
+
+[node name="Grass01" parent="." instance=ExtResource("1_77cw2")]
+layer_0/tile_data = PackedInt32Array(0, 65536, 1, 1, 65536, 1, 2, 65536, 1, 3, 65536, 1, 4, 65536, 1, 5, 65536, 1, 6, 65536, 1, 7, 65536, 1, 8, 65536, 1, 9, 65536, 1, 10, 65536, 1, 11, 65536, 1, 12, 65536, 1, 13, 65536, 1, 14, 65536, 1, 15, 65536, 1, 16, 65536, 1, 17, 65536, 1, 18, 65536, 1, 19, 65536, 1, 20, 65536, 1, 21, 65536, 1, 22, 65536, 1, 65558, 65536, 1, 65557, 65536, 1, 131093, 65536, 1, 196629, 65536, 1, 262165, 65536, 1, 327701, 65536, 1, 393237, 65536, 5, 458773, 65536, 1, 458774, 65536, 1, 393238, 65536, 1, 327702, 65536, 1, 262166, 65536, 1, 196630, 65536, 1, 131094, 65536, 1, 524310, 65536, 1, 589846, 65536, 1, 655382, 65536, 1, 720918, 65536, 1, 720917, 65536, 1, 720916, 65536, 1, 720915, 65536, 1, 720914, 65536, 1, 720913, 65536, 1, 720912, 65536, 1, 720911, 65536, 1, 720910, 65536, 1, 720909, 65536, 1, 720908, 65536, 1, 720907, 65536, 1, 720906, 65536, 1, 720905, 65536, 1, 720904, 65536, 1, 720903, 65536, 1, 720902, 65536, 1, 720901, 65536, 1, 720900, 65536, 1, 720899, 327680, 5, 720898, 65536, 1, 720897, 65536, 1, 720896, 65536, 1, 655360, 65536, 1, 589824, 65536, 1, 65536, 65536, 1, 131072, 65536, 1, 196608, 65536, 1, 262144, 196608, 5, 327680, 65536, 1, 393216, 65536, 1, 458752, 65536, 1, 524288, 65536, 1, 65537, 65536, 1, 65538, 65536, 1, 65539, 65536, 1, 65540, 327680, 6, 65541, 65536, 1, 65542, 65536, 1, 65543, 65536, 1, 65544, 65536, 1, 65545, 65536, 1, 65546, 65536, 1, 65547, 65536, 1, 65548, 327680, 5, 65549, 65536, 1, 65550, 65536, 1, 65551, 131072, 6, 65552, 65536, 1, 65553, 65536, 1, 65554, 65536, 1, 65555, 65536, 1, 65556, 0, 6, 131092, 65536, 1, 196628, 65536, 1, 262164, 65536, 1, 327700, 65536, 1, 393236, 65536, 1, 524309, 65536, 1, 589845, 65536, 1, 589844, 65536, 1, 655380, 65536, 1, 655379, 65536, 1, 655378, 65536, 1, 655377, 131072, 6, 655376, 65536, 1, 655375, 65536, 1, 655374, 65536, 1, 655373, 65536, 1, 655372, 65536, 1, 655371, 65536, 1, 655370, 65536, 1, 655369, 65536, 1, 655368, 65536, 1, 655367, 65536, 1, 655366, 65536, 1, 655365, 131072, 6, 655363, 65536, 1, 655362, 65536, 1, 655361, 0, 6, 589825, 65536, 1, 524289, 65536, 1, 458753, 65536, 1, 393218, 131072, 6, 327682, 65536, 1, 262146, 65536, 1, 262145, 65536, 1, 196610, 65536, 1, 131074, 65536, 1, 196609, 65536, 1, 327681, 196608, 6, 131075, 65536, 5, 131076, 65536, 1, 131077, 65536, 1, 131078, 65536, 1, 131079, 65536, 6, 131080, 65536, 1, 131081, 65536, 1, 131082, 65536, 1, 131083, 65536, 1, 131084, 65536, 1, 131085, 65536, 1, 131086, 65536, 1, 131087, 65536, 5, 131088, 65536, 1, 131089, 65536, 1, 131090, 327680, 6, 131091, 65536, 1, 196627, 65536, 1, 262163, 65536, 1, 458772, 65536, 1, 524308, 65536, 1, 655381, 65536, 1, 655364, 65536, 1, 589827, 65536, 1, 589826, 65536, 1, 524290, 65536, 1, 458754, 262144, 5, 393217, 65536, 1, 131073, 65536, 1, 196611, 65536, 1, 262147, 65536, 1, 327683, 65536, 1, 393219, 65536, 1, 458755, 65536, 1, 524291, 65536, 1, 589828, 65536, 1, 589829, 65536, 1, 589830, 65536, 1, 589831, 65536, 1, 589832, 327680, 6, 589833, 65536, 1, 589834, 65536, 1, 589835, 0, 6, 589836, 65536, 1, 589837, 65536, 1, 589838, 65536, 1, 589839, 65536, 1, 589840, 65536, 1, 524296, 65536, 1, 524297, 65536, 1, 524298, 65536, 1, 524299, 65536, 1, 524300, 65536, 1, 524301, 65536, 1, 524302, 65536, 1, 524303, 65536, 1, 524304, 65536, 1, 589841, 327680, 5, 589842, 65536, 1, 589843, 65536, 1, 524307, 327680, 6, 524306, 65536, 1, 524305, 65536, 1, 524295, 65536, 1, 524294, 65536, 1, 524293, 65536, 1, 524292, 65536, 1, 458756, 65536, 1, 458757, 65536, 1, 458758, 65536, 1, 393222, 65536, 1, 393223, 65536, 1, 393224, 65536, 1, 393225, 65536, 1, 393226, 65536, 1, 393227, 65536, 1, 393228, 65536, 5, 458764, 65536, 1, 458765, 65536, 1, 458766, 65536, 1, 458767, 65536, 1, 458768, 65536, 1, 458769, 65536, 1, 458770, 65536, 1, 458771, 65536, 1, 458763, 65536, 1, 458762, 65536, 1, 458761, 65536, 1, 458760, 65536, 1, 458759, 65536, 6, 393229, 65536, 1, 393230, 65536, 1, 393231, 65536, 1, 393232, 65536, 1, 393233, 65536, 1, 393234, 65536, 1, 327699, 65536, 6, 327698, 65536, 1, 327697, 65536, 1, 327696, 65536, 1, 327695, 65536, 1, 327694, 65536, 1, 327693, 65536, 1, 327692, 65536, 1, 327691, 65536, 1, 327690, 65536, 1, 327689, 327680, 5, 327688, 65536, 1, 327687, 65536, 1, 393235, 65536, 1, 262161, 65536, 1, 196624, 65536, 1, 196623, 65536, 1, 196619, 65536, 1, 196618, 65536, 5, 196617, 65536, 1, 262153, 65536, 1, 262152, 65536, 1, 262162, 65536, 1, 196616, 65536, 1, 262151, 65536, 1, 262150, 65536, 1, 327686, 65536, 1, 262155, 65536, 1, 262156, 65536, 1, 262157, 65536, 1, 262158, 131072, 6, 262154, 65536, 1, 262149, 65536, 1, 327685, 65536, 1, 327684, 262144, 6, 393220, 65536, 1, 262148, 0, 6, 196612, 65536, 1, 196615, 65536, 1, 196613, 65536, 1, 196614, 65536, 1, 393221, 65536, 1, 196621, 65536, 1, 196622, 65536, 1, 196625, 65536, 1, 196626, 65536, 1, 262160, 65536, 1, 262159, 65536, 1, 196620, 65536, 1)
+
+[node name="LevelTransition" parent="." instance=ExtResource("1_21joc")]
+position = Vector2(0, 112)
+level = "res://scenes/Levels/Forest_01.tscn"
+size = 4
+
+[node name="tree_01" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(43, 132)
+
+[node name="tree_02" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(68, 167)
+
+[node name="tree_03" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(103, 181)
+
+[node name="tree_04" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(312, 166)
+
+[node name="tree_05" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(336, 140)
+
+[node name="tree_06" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(128, 171)
+
+[node name="tree_07" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(167, 188)
+
+[node name="tree_08" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(207, 195)
+
+[node name="tree_09" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(241, 184)
+
+[node name="tree_10" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(343, 186)
+
+[node name="tree_11" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(284, 196)
+
+[node name="tree_12" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(354, 157)
+
+[node name="tree_13" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(361, 110)
+
+[node name="tree_14" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(335, 95)
+
+[node name="tree_15" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(41, 176)
+
+[node name="tree_16" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(19, 194)
+
+[node name="tree_17" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(75, 199)
+
+[node name="tree_18" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(140, 192)
+
+[node name="tree_19" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(13, 138)
+
+[node name="tree_20" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(14, 160)
+
+[node name="tree_21" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(15, 51)
+
+[node name="tree_22" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(39, 42)
+
+[node name="tree_23" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(2, 45)
+
+[node name="tree_24" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(28, 30)
+
+[node name="tree_25" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(12, 10)
+
+[node name="tree_26" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(46, 0)
+
+[node name="tree_27" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(96, -6)
+
+[node name="tree_28" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(77, 17)
+
+[node name="tree_29" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(332, 46)
+
+[node name="tree_30" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(315, 67)
+
+[node name="tree_31" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(287, 12)
+
+[node name="tree_32" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(254, 22)
+
+[node name="tree_33" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(222, -9)
+
+[node name="tree_34" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(205, -20)
+
+[node name="tree_35" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(182, 11)
+
+[node name="tree_36" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(170, -1)
+
+[node name="tree_37" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(115, 12)
+
+[node name="tree_38" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(139, -1)
+
+[node name="tree_39" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(154, -7)
+
+[node name="tree_40" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(100, 29)
+
+[node name="tree_41" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(230, 11)
+
+[node name="tree_42" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(210, 20)
+
+[node name="tree_43" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(356, 87)
+
+[node name="tree_44" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(359, 51)
+
+[node name="tree_45" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(305, 33)
+
+[node name="tree_46" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(362, 15)
+
+[node name="tree_47" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(336, 5)
+
+[node name="tree_48" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(318, -10)
+
+[node name="tree_49" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(274, 1)
+
+[node name="tree_50" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(370, 172)
+
+[node name="tree_51" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(195, 150)
+
+[node name="tree_52" parent="." instance=ExtResource("2_knvau")]
+position = Vector2(218, 129)
+
+[node name="tree_53" parent="." instance=ExtResource("3_4cmk8")]
+position = Vector2(227, 167)
+
+[node name="rock_02" parent="." instance=ExtResource("5_63w5b")]
+position = Vector2(68, 45)
+
+[node name="rock_01" parent="." instance=ExtResource("6_epp1d")]
+position = Vector2(146, 25)
+
+[node name="mossrock_02" parent="." instance=ExtResource("7_0euk1")]
+position = Vector2(203, 48)
+
+[node name="MossRock_01" parent="." instance=ExtResource("8_vp3u1")]
+position = Vector2(286, 160)
+
+[node name="MossRock_02" parent="." instance=ExtResource("8_vp3u1")]
+position = Vector2(34, 69)
+
+[node name="rock_03" parent="." instance=ExtResource("6_epp1d")]
+position = Vector2(270, 28)
+
+[node name="MossRock_03" parent="." instance=ExtResource("8_vp3u1")]
+position = Vector2(312, 96)
+
+[node name="mossrock_03" parent="." instance=ExtResource("7_0euk1")]
+position = Vector2(137, 110)
+
+[node name="MossRock_04" parent="." instance=ExtResource("8_vp3u1")]
+position = Vector2(256, 148)
+
+[node name="rock_04" parent="." instance=ExtResource("5_63w5b")]
+position = Vector2(65, 134)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("10_abggg")]
+position = Vector2(9, 108)

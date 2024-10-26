@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqhxtajlrw3q1"]
+
+[ext_resource type="Texture2D" uid="uid://cf2xf54fagqfn" path="res://assets/Tree-Sheet.png" id="1_y6ekn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8qff3"]
+radius = 9.0
+height = 20.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nwtrb"]
+a = Vector2(1, 0)
+b = Vector2(-1, 10)
+
+[node name="tree_01" type="Node2D"]
+position = Vector2(0, -32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_y6ekn")
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+position = Vector2(0, 1)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(0, 17)
+shape = SubResource("CapsuleShape2D_8qff3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(-10, 20)
+shape = SubResource("SegmentShape2D_nwtrb")

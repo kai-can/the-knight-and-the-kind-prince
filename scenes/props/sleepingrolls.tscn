@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://vh3eek0pa2ix"]
+
+[ext_resource type="Texture2D" uid="uid://dyf25n8rqgf2n" path="res://assets/Campbed.png" id="1_b347e"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ehypi"]
+a = Vector2(-1, -2)
+b = Vector2(-8, 6)
+
+[node name="sleepingrolls" type="Node2D"]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b347e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(-6, -4)
+shape = SubResource("SegmentShape2D_ehypi")

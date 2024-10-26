@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://hkil6vw3jp5w"]
+
+[ext_resource type="Texture2D" uid="uid://5h6nqqoq10tj" path="res://assets/Rock-Sheet.png" id="1_8h57u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pynse"]
+size = Vector2(11, 6)
+
+[node name="MossRock_01" type="Node2D"]
+position = Vector2(0, -8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8h57u")
+hframes = 4
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
+visible = false
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_pynse")
