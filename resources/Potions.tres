@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://ce23a3p48w5k5"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_biqa7"]
+[ext_resource type="Texture2D" uid="uid://bf5nt303rl7lr" path="res://assets/ItemSprites.png" id="2_7e32v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjx77"]
+atlas = ExtResource("2_7e32v")
+region = Rect2(100, 0, 25, 25)
+
+[resource]
+script = ExtResource("1_biqa7")
+name = "Memory In a Bottle"
+description = "Holding the bottle you taste sweet coconut on your tongue and feel the cool breeze of fall air. You instantly are filled with a sense of belonging and feel at home, even in this strange place."
+texture = SubResource("AtlasTexture_xjx77")

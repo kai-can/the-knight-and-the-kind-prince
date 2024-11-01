@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bath3hqjxooog"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_kr5rt"]
+[ext_resource type="Texture2D" uid="uid://bf5nt303rl7lr" path="res://assets/ItemSprites.png" id="2_jyrxj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcojl"]
+atlas = ExtResource("2_jyrxj")
+region = Rect2(75, 0, 25, 25)
+
+[resource]
+script = ExtResource("1_kr5rt")
+name = "Simple Metal Locket"
+description = " A simple metal locket, tiny in your hands. Carved into its surface are unknown runes. When you open a locket a small painting of you and your prince is secured inside. He's always been sentimental."
+texture = SubResource("AtlasTexture_mcojl")

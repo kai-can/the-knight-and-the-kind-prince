@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://7ujronsu5p3h"]
 
 [ext_resource type="Texture2D" uid="uid://cw6rfe2mg2n2o" path="res://assets/The Knight-Sheet.png" id="1_qxmu8"]
-[ext_resource type="Script" path="res://scripts/player_spawn.gd" id="1_uw6hp"]
+[ext_resource type="Script" path="res://scripts/player/player_spawn.gd" id="1_uw6hp"]
 
 [node name="PlayerSpawn" type="Node2D"]
 script = ExtResource("1_uw6hp")

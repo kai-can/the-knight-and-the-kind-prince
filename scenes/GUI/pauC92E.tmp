@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://icw5l0r4plyj"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_1q0dw"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_1q0dw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.953339, 0.795315, 0.884442, 0.411765)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -88.0
+offset_right = 43.5
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="button_continue" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Continue"
+
+[node name="button_exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 19.0
+offset_right = 38.0
+offset_bottom = 42.0
+grow_horizontal = 2
+text = "[ Paused ]"
+
+[connection signal="pressed" from="VBoxContainer/button_continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/button_exit" to="." method="_on_button_2_exit_pressed"]

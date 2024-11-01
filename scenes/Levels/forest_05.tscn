@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1u7qi7rboil6"]
+[gd_scene load_steps=12 format=3 uid="uid://b1u7qi7rboil6"]
 
 [ext_resource type="PackedScene" uid="uid://bkbkbawt8eaym" path="res://scenes/grass_01.tscn" id="1_qeuwu"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_rlsoj"]
+[ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_rlsoj"]
 [ext_resource type="PackedScene" uid="uid://bd31pvg2yt0ta" path="res://scenes/props/tree_02.tscn" id="2_l7e3x"]
 [ext_resource type="PackedScene" uid="uid://bsbixwumfcttb" path="res://scenes/level_transition.tscn" id="2_ohgbx"]
 [ext_resource type="PackedScene" uid="uid://dqhxtajlrw3q1" path="res://scenes/props/tree_01.tscn" id="3_pb5lr"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://hkil6vw3jp5w" path="res://scenes/props/moss_rock_01.tscn" id="6_m8t8o"]
 [ext_resource type="PackedScene" uid="uid://cqld4gob4uu7c" path="res://scenes/props/mossrock_02.tscn" id="7_bj678"]
 [ext_resource type="PackedScene" uid="uid://7ujronsu5p3h" path="res://scenes/player_spawn.tscn" id="10_x4l02"]
+[ext_resource type="PackedScene" uid="uid://b2o4vofxxjhwu" path="res://scenes/props/specials/Potions-interactable.tscn" id="11_ufd6u"]
 
 [node name="forest_05" type="Node2D"]
 y_sort_enabled = true
@@ -216,3 +217,6 @@ position = Vector2(308, 20)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("10_x4l02")]
 position = Vector2(363, 104)
+
+[node name="Potions-interactable" parent="." instance=ExtResource("11_ufd6u")]
+position = Vector2(135, 103)

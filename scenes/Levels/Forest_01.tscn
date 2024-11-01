@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cf24o3gi125ub"]
 
 [ext_resource type="PackedScene" uid="uid://7ujronsu5p3h" path="res://scenes/player_spawn.tscn" id="1_1pkt8"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_bygnk"]
+[ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_bygnk"]
 [ext_resource type="PackedScene" uid="uid://bkbkbawt8eaym" path="res://scenes/grass_01.tscn" id="1_olks5"]
 [ext_resource type="PackedScene" uid="uid://bsbixwumfcttb" path="res://scenes/level_transition.tscn" id="4_pbkna"]
 [ext_resource type="PackedScene" uid="uid://bd31pvg2yt0ta" path="res://scenes/props/tree_02.tscn" id="5_3rmdk"]
@@ -241,3 +241,12 @@ position = Vector2(131, 33)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("1_1pkt8")]
 position = Vector2(188, 83)
+
+[node name="tree_59" parent="." instance=ExtResource("6_kjvvb")]
+position = Vector2(162, 216)
+
+[node name="tree_60" parent="." instance=ExtResource("5_3rmdk")]
+position = Vector2(224, 223)
+
+[node name="tree_61" parent="." instance=ExtResource("6_kjvvb")]
+position = Vector2(194, 208)

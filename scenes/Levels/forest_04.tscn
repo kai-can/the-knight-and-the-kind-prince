@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://oub3x361nhvi"]
+[gd_scene load_steps=12 format=3 uid="uid://oub3x361nhvi"]
 
 [ext_resource type="PackedScene" uid="uid://bsbixwumfcttb" path="res://scenes/level_transition.tscn" id="1_21joc"]
 [ext_resource type="PackedScene" uid="uid://bkbkbawt8eaym" path="res://scenes/grass_01.tscn" id="1_77cw2"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_hne1u"]
+[ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_hne1u"]
 [ext_resource type="PackedScene" uid="uid://dqhxtajlrw3q1" path="res://scenes/props/tree_01.tscn" id="2_knvau"]
 [ext_resource type="PackedScene" uid="uid://bd31pvg2yt0ta" path="res://scenes/props/tree_02.tscn" id="3_4cmk8"]
 [ext_resource type="PackedScene" uid="uid://cu34nixaq06db" path="res://scenes/props/rock_02.tscn" id="5_63w5b"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cqld4gob4uu7c" path="res://scenes/props/mossrock_02.tscn" id="7_0euk1"]
 [ext_resource type="PackedScene" uid="uid://hkil6vw3jp5w" path="res://scenes/props/moss_rock_01.tscn" id="8_vp3u1"]
 [ext_resource type="PackedScene" uid="uid://7ujronsu5p3h" path="res://scenes/player_spawn.tscn" id="10_abggg"]
+[ext_resource type="PackedScene" uid="uid://crjb4gxu4qgum" path="res://scenes/props/specials/Locket-interactable.tscn" id="11_hls2r"]
 
 [node name="Forest_04" type="Node2D"]
 y_sort_enabled = true
@@ -21,6 +22,7 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 1, 1, 65536, 1, 2, 65536, 1, 3, 6
 [node name="LevelTransition" parent="." instance=ExtResource("1_21joc")]
 position = Vector2(0, 112)
 level = "res://scenes/Levels/Forest_01.tscn"
+target_transition_area = "LevelTransition3"
 size = 4
 
 [node name="tree_01" parent="." instance=ExtResource("2_knvau")]
@@ -214,3 +216,6 @@ position = Vector2(65, 134)
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("10_abggg")]
 position = Vector2(9, 108)
+
+[node name="Locket-interactable" parent="." instance=ExtResource("11_hls2r")]
+position = Vector2(253, 84)

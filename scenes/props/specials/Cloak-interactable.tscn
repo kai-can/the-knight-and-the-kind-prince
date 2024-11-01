@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3solw6s4p3lm"]
+
+[ext_resource type="Texture2D" uid="uid://blm4hae7i58q1" path="res://assets/cloak-Sheet.png" id="1_cfksi"]
+[ext_resource type="Script" path="res://scripts/cloak-interactable.gd" id="1_vfoe4"]
+[ext_resource type="Resource" uid="uid://3vjkrswwgwnq" path="res://resources/Cloak.tres" id="2_yap7p"]
+[ext_resource type="PackedScene" uid="uid://bpa5glqh2vugf" path="res://scenes/persistent_data_handler.tscn" id="4_5xyc3"]
+
+[sub_resource type="Animation" id="Animation_6bbbo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pb8p6"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+step = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8q5cf"]
+_data = {
+"RESET": SubResource("Animation_6bbbo"),
+"default": SubResource("Animation_pb8p6")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ll11m"]
+size = Vector2(17, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_el16u"]
+size = Vector2(21, 13)
+
+[node name="Cloak-interactable" type="Node2D"]
+script = ExtResource("1_vfoe4")
+item_data = ExtResource("2_yap7p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cfksi")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_8q5cf")
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_ll11m")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 8.5)
+shape = SubResource("RectangleShape2D_el16u")
+debug_color = Color(1.8049e-06, 0.540633, 9.62615e-08, 0.419608)
+
+[node name="IsPickedUp" parent="." instance=ExtResource("4_5xyc3")]

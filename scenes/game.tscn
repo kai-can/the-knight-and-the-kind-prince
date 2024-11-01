@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://db11m3wwsgam0"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_avfvm"]
+[ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_avfvm"]
 [ext_resource type="PackedScene" uid="uid://bkbkbawt8eaym" path="res://scenes/grass_01.tscn" id="2_3p4yh"]
 [ext_resource type="PackedScene" uid="uid://20a6mn00uoru" path="res://scenes/props/rock_01.tscn" id="3_bactq"]
 [ext_resource type="PackedScene" uid="uid://hkil6vw3jp5w" path="res://scenes/props/moss_rock_01.tscn" id="3_hn5oa"]

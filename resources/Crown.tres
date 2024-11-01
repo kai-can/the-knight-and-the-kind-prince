@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://dr8lxy5hd5gkm"]
+
+[ext_resource type="Script" path="res://scripts/item_data.gd" id="1_i4uqj"]
+[ext_resource type="Texture2D" uid="uid://bf5nt303rl7lr" path="res://assets/ItemSprites.png" id="2_b3sgj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6lfl"]
+atlas = ExtResource("2_b3sgj")
+region = Rect2(50, 0, 25, 25)
+
+[resource]
+script = ExtResource("1_i4uqj")
+name = "Repaired Crown"
+description = " Heavy in your hands, the golden crown always weighs more than you expect. The crowns centerpiece, a many times fractured ruby, twinkles in the light. Your prince guards this crown fiercely around others, with you being the notable exception. The long process of repairing it has been difficult for you both but he's beginning to think it looks pretty even if it may never look how it did before."
+texture = SubResource("AtlasTexture_d6lfl")

@@ -1,0 +1,139 @@
+[gd_scene load_steps=9 format=3 uid="uid://icw5l0r4plyj"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_1q0dw"]
+[ext_resource type="Texture2D" uid="uid://bf5nt303rl7lr" path="res://assets/ItemSprites.png" id="2_n1fn7"]
+[ext_resource type="FontFile" uid="uid://iyq66qo4wl82" path="res://assets/fonts/m5x7.ttf" id="2_r2nn8"]
+[ext_resource type="Script" path="res://scripts/inventory_ui.gd" id="3_l44yv"]
+[ext_resource type="PackedScene" uid="uid://3fttflhapssu" path="res://scenes/GUI/inventory_slot.tscn" id="3_xx60y"]
+[ext_resource type="Resource" uid="uid://bt4xmsjbhykid" path="res://resources/player_inventory.tres" id="4_ddq2k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvl3i"]
+atlas = ExtResource("2_n1fn7")
+region = Rect2(0, 0, 25, 25)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2qnoq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_kvl3i")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_1q0dw")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.953339, 0.795315, 0.884442, 0.411765)
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -26.0
+offset_right = 26.0
+offset_bottom = 13.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_r2nn8")
+text = "[ Paused ]"
+
+[node name="ItemDescription" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -13.0
+offset_right = 173.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.340592, 0.099608, 0.165497, 1)
+theme_override_fonts/font = ExtResource("2_r2nn8")
+theme_override_font_sizes/font_size = 16
+text = "Heavy in your hands, the golden crown always weighs more than you expect. The crowns centerpiece, a many times fractured ruby, twinkles in the light. Your prince guards this crown fiercely around others, with you being the notable exception. The long process of repairing it has been difficult for you both but he's beginning to think it looks pretty even if it may never look how it did before."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -79.5
+offset_right = 66.0
+offset_bottom = -34.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2qnoq")
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("3_l44yv")
+data = ExtResource("4_ddq2k")
+
+[node name="InventorySlot3" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_xx60y")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_xx60y")]
+layout_mode = 2
+
+[node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_xx60y")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_xx60y")]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.5
+offset_top = 72.5
+offset_right = 57.5
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="button_continue" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r2nn8")
+text = "Continue"
+
+[node name="button_exit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r2nn8")
+text = "Exit Game"
+
+[connection signal="pressed" from="Control/VBoxContainer/button_continue" to="." method="_on_button_continue_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/button_continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/button_exit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/button_exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/button_exit" to="." method="_on_button_2_exit_pressed"]

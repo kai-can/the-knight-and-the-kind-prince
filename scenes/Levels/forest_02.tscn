@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcywvuuw2ojui"]
+[gd_scene load_steps=12 format=3 uid="uid://bcywvuuw2ojui"]
 
 [ext_resource type="PackedScene" uid="uid://bsbixwumfcttb" path="res://scenes/level_transition.tscn" id="1_87blb"]
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_apsev"]
+[ext_resource type="Script" path="res://scripts/levels/level.gd" id="1_apsev"]
 [ext_resource type="PackedScene" uid="uid://bkbkbawt8eaym" path="res://scenes/grass_01.tscn" id="1_pkaja"]
 [ext_resource type="PackedScene" uid="uid://bd31pvg2yt0ta" path="res://scenes/props/tree_02.tscn" id="2_2btrt"]
 [ext_resource type="PackedScene" uid="uid://dqhxtajlrw3q1" path="res://scenes/props/tree_01.tscn" id="3_d14ab"]
 [ext_resource type="PackedScene" uid="uid://20a6mn00uoru" path="res://scenes/props/rock_01.tscn" id="4_0ggu3"]
+[ext_resource type="PackedScene" uid="uid://c3solw6s4p3lm" path="res://scenes/props/specials/Cloak-interactable.tscn" id="4_8jg66"]
 [ext_resource type="PackedScene" uid="uid://cu34nixaq06db" path="res://scenes/props/rock_02.tscn" id="5_gj22u"]
 [ext_resource type="PackedScene" uid="uid://cqld4gob4uu7c" path="res://scenes/props/mossrock_02.tscn" id="6_w1ov6"]
 [ext_resource type="PackedScene" uid="uid://hkil6vw3jp5w" path="res://scenes/props/moss_rock_01.tscn" id="7_4hqv5"]
@@ -24,6 +25,9 @@ level = "res://scenes/Levels/Forest_01.tscn"
 target_transition_area = "LevelTransition5"
 size = 4
 side = 2
+
+[node name="Cloak-interactable" parent="." instance=ExtResource("4_8jg66")]
+position = Vector2(172, 84)
 
 [node name="tree_02" parent="." instance=ExtResource("2_2btrt")]
 position = Vector2(52, 36)

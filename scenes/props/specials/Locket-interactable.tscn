@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://crjb4gxu4qgum"]
+
+[ext_resource type="Texture2D" uid="uid://dw48b8vfgmd2o" path="res://assets/necklace-Sheet.png" id="1_ghcuf"]
+[ext_resource type="Script" path="res://scripts/locket-interactable.gd" id="1_nhlrv"]
+[ext_resource type="Resource" uid="uid://bath3hqjxooog" path="res://resources/Locket.tres" id="2_m4d5m"]
+
+[sub_resource type="Animation" id="Animation_210jb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n5eur"]
+resource_name = "default"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wt7au"]
+_data = {
+"RESET": SubResource("Animation_210jb"),
+"default": SubResource("Animation_n5eur")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g65pg"]
+size = Vector2(11, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttecv"]
+size = Vector2(17, 11)
+
+[node name="Locket-interactable" type="Node2D"]
+script = ExtResource("1_nhlrv")
+item_data = ExtResource("2_m4d5m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_wt7au")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ghcuf")
+hframes = 5
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 9)
+shape = SubResource("RectangleShape2D_g65pg")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 9.5)
+shape = SubResource("RectangleShape2D_ttecv")
+debug_color = Color(1.8049e-06, 0.540633, 9.62615e-08, 0.419608)
