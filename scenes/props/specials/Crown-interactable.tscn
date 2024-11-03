@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://diuhr5net83vk"]
+[gd_scene load_steps=10 format=3 uid="uid://diuhr5net83vk"]
 
 [ext_resource type="Script" path="res://scripts/crown-interactable.gd" id="1_2bpd2"]
 [ext_resource type="Texture2D" uid="uid://dxfck6pa4xtsd" path="res://assets/crown-Sheet.png" id="1_mgrqn"]
 [ext_resource type="Resource" uid="uid://dr8lxy5hd5gkm" path="res://resources/Crown.tres" id="2_qwk60"]
+[ext_resource type="PackedScene" uid="uid://bpa5glqh2vugf" path="res://scenes/persistent_data_handler.tscn" id="4_bs6vk"]
 
 [sub_resource type="Animation" id="Animation_g2fl5"]
 length = 0.001
@@ -80,3 +81,5 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1, 9)
 shape = SubResource("RectangleShape2D_7epyy")
+
+[node name="IsPickedup" parent="." instance=ExtResource("4_bs6vk")]

@@ -9,6 +9,7 @@ var is_open: bool = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var interact_area: Area2D = $Area2D
+@onready var is_picked_up: PersistentDataHandler = $IsPickedup
 
 func _ready() -> void:
 	
@@ -17,12 +18,22 @@ func _ready() -> void:
 	interact_area.area_entered.connect( _on_area_enter )
 	interact_area.area_exited.connect( _on_area_exit )
 	animation_player.play( "default" )
+	is_picked_up.data_loaded.connect( set_chest_state )
+	is_picked_up.get_value()
 	pass
+
+func set_chest_state() -> void:
+	is_open = is_picked_up.value
+	if is_open:
+		queue_free()
+	else:
+		return
 
 func player_interact() -> void:
 	if is_open == true:
 		return
 	is_open = true
+	is_picked_up.set_value()
 	if item_data and quantity > 0:
 		PlayerManager.INVENTORY_DATA.add_item( item_data, quantity )
 		visible = false

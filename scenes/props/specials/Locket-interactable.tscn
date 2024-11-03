@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://crjb4gxu4qgum"]
+[gd_scene load_steps=10 format=3 uid="uid://crjb4gxu4qgum"]
 
 [ext_resource type="Texture2D" uid="uid://dw48b8vfgmd2o" path="res://assets/necklace-Sheet.png" id="1_ghcuf"]
 [ext_resource type="Script" path="res://scripts/locket-interactable.gd" id="1_nhlrv"]
 [ext_resource type="Resource" uid="uid://bath3hqjxooog" path="res://resources/Locket.tres" id="2_m4d5m"]
+[ext_resource type="PackedScene" uid="uid://bpa5glqh2vugf" path="res://scenes/persistent_data_handler.tscn" id="4_r81v7"]
 
 [sub_resource type="Animation" id="Animation_210jb"]
 length = 0.001
@@ -80,3 +81,5 @@ monitorable = false
 position = Vector2(0.5, 9.5)
 shape = SubResource("RectangleShape2D_ttecv")
 debug_color = Color(1.8049e-06, 0.540633, 9.62615e-08, 0.419608)
+
+[node name="IsPickedUp" parent="." instance=ExtResource("4_r81v7")]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://caycj0gs8q4hh"]
+
+[ext_resource type="Texture2D" uid="uid://c2vjbamtr1w8y" path="res://npc/PrincePortrait-Sheet.png" id="1_s7c84"]
+[ext_resource type="Script" path="res://npc/npc_resource.gd" id="2_qnk8j"]
+[ext_resource type="Texture2D" uid="uid://cj140xayudeke" path="res://npc/The Prince-Sheet.png" id="3_yxuwc"]
+
+[resource]
+script = ExtResource("2_qnk8j")
+npc_name = "Kind Prince"
+sprite = ExtResource("3_yxuwc")
+portrait = ExtResource("1_s7c84")
+dialog_audio_pitch = 1.5

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=4 format=3 uid="uid://baq2xf2ehu1g8"]
+
+[ext_resource type="Script" path="res://npc/npc_resource.gd" id="1_7wtga"]
+[ext_resource type="Texture2D" uid="uid://cmyim8ox6yqno" path="res://npc/KnightPortrait-Sheet.png" id="1_btqh4"]
+[ext_resource type="Texture2D" uid="uid://cw6rfe2mg2n2o" path="res://assets/The Knight-Sheet.png" id="3_an7v7"]
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("1_7wtga")
+npc_name = "The Knight"
+sprite = ExtResource("3_an7v7")
+portrait = ExtResource("1_btqh4")
+dialog_audio_pitch = 1.0

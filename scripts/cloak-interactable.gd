@@ -19,13 +19,14 @@ func _ready() -> void:
 	interact_area.area_exited.connect( _on_area_exit )
 	animation_player.play( "default" )
 	is_picked_up.data_loaded.connect( set_chest_state )
+	is_picked_up.get_value()
 	pass
 
 
 func set_chest_state() -> void:
 	is_open = is_picked_up.value
 	if is_open:
-		visible = false
+		queue_free()
 	else:
 		return
 
